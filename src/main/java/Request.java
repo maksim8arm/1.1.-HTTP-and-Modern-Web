@@ -58,10 +58,11 @@ public class Request {
 
 
     public String getQueryParam(String name) {
+
         if (queryParams == null) {
             return null;
         }
-        for (NameValuePair value : dataQueryStr) {
+        for (NameValuePair value : getDataQueryStr()) {
             if (name.equals(value.getName())) {
                 return value.getValue();
             }
@@ -70,8 +71,8 @@ public class Request {
     }
 
     public List<NameValuePair> getQueryParams() {
-        if (dataQueryStr == null) return null;
-        return dataQueryStr;
+        if (getDataQueryStr() == null) return null;
+        return getDataQueryStr();
     }
 
     public String showQueryToScreen(List<NameValuePair> dataQueryStr) {

@@ -36,6 +36,9 @@ public class ConnectionHandler {
 
             var request = new Request(parts[0], parts[1], parts[2], null, null, quaryParams);
 
+            System.out.println(request.getQueryParam("name"));
+            System.out.println(request.getQueryParams());
+
             if (!handlers.containsKey(request.getMethod())) {
                 send404notFound(out);
                 return;
